@@ -1,0 +1,15 @@
+
+<div class="face-snap-card" [ngClass]= "{ snapped : userhasSnap }" >
+    <h2>{{ faceSnap.title | uppercase}}</h2>
+    @if (faceSnap.location) {
+        <p>{{faceSnap.location}}</p>
+    }@else{
+        <p>Localisation Non specifié</p>
+    }
+    <img [src]= "faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.descripton}}</p>
+    <p> FaceSnap crée le {{ faceSnap.createdAt}}</p>
+    <p> 
+        <button (click)="onSnap()" >{{snapbutonnText}}</button>
+        <span [ngStyle]=" {color :'rgb(0 ,+ faceSnap.snaps + , 0)' } ">{{faceSnap.snaps}}</span>
+</div>
